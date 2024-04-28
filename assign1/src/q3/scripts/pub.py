@@ -1,24 +1,27 @@
 #!/usr/bin/python3
 
 import rospy
-from std_msgs.msg import Int32
+from std_msgs.msg import Float32, Int32
+import time
 
-def pub():
-    rospy.init_node('q1_pub', anonymous=True)
-    pub_num1 = rospy.Publisher('/num1', Int32, queue_size=10)
-    pub_num2 = rospy.Publisher('/num2', Int32, queue_size=10)
-    rate = rospy.Rate(1)  
-
-    num1 = 5
-    num2 = 7
+def publisher_node():
+    rospy.init_node('publisher_node', anonymous=True)
+    pub_float = rospy.Publisher('float_topic', Float32, queue_size=10)
+    pub_int = rospy.Publisher('int_topic', Int32, queue_size=10)
+    rate = rospy.Rate(1)  # Publish rate: 1 Hz
 
     while not rospy.is_shutdown():
-        pub_num1.publish(num1)
-        pub_num2.publish(num2)
+        float_value = 3.14  # Sample float value
+        int_value = 42      # Sample integer value
+
+        pub_float.publish(float_value)
+        pub_int.publish(int_value)
+
+        rospy.loginfo("Published float value: %f, integer value: %d", float_value, int_value)
         rate.sleep()
 
-try:
-    pub()
-except rospy.ROSInterruptException:
-    pass
-
+if __name__ == '__main__':
+    try:
+        publisher_node()
+    except rospy.ROSInterruptException:
+        pass

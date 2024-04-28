@@ -13,6 +13,7 @@ def pub():
     num2 = 7
 
     while not rospy.is_shutdown():
+        print(1)
         pub_num1.publish(num1)
         pub_num2.publish(num2)
         rate.sleep()
