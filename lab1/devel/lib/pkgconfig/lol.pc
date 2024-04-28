@@ -1,8 +1,0 @@
-prefix=/home/psh/Documents/ros/devel
-
-Name: lol
-Description: Description of lol
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

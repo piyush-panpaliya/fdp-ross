@@ -1,0 +1,35 @@
+# Ignore build and development files
+build/
+devel/
+
+# Ignore logs and debugging output
+*.log
+*.log.*
+*.db
+
+# Ignore compiled binaries and executables
+*.pyc
+*.pyo
+*.exe
+*.dll
+*.so
+*.out
+
+# Ignore generated documentation
+doc/
+
+# Ignore ROS-specific files and directories
+rosbin/
+rosinstall*
+*.rosinstall
+*.bak
+*.orig
+*~
+
+# Ignore certain ROS-generated files
+CMakeLists.txt.user
+
+# Ignore specific ROS-generated directories
+*.cmake
+CMakeFiles/
+catkin_generated/
