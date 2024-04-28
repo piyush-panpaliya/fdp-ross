@@ -1,0 +1,2 @@
+lol
+-DCATKIN_DEVEL_PREFIX=/home/psh/Documents/ros/devel -DCMAKE_INSTALL_PREFIX=/home/psh/Documents/ros/install -G Unix Makefiles
